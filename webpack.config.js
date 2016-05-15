@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -22,14 +23,24 @@ module.exports = {
       {
         test: /\.css$/,
         loader: "style!css?modules!postcss"
+      },
+      {
+        test: /\.jade$/,
+        loader: "jade-react"
+      },
+      {
+        test: /\.scss$/,
+        loader: "style!css?modules!postcss!sass"
       }
     ]
   },
   postcss: [
     require('autoprefixer')
   ],
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./sass")]
+  },
   plugins: [
-    new webpack.BannerPlugin("Copyright Flying Unicorns inc."),
     new HtmlWebpackPlugin({
       template: __dirname + "/app/index.tmpl.html"
     }),

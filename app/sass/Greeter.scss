@@ -1,0 +1,8 @@
+$bgColor: #eee;
+$borderColor: #ccc;
+
+.root {
+  background-color: $bgColor;
+  padding: 10px;
+  border: 3px solid $borderColor;
+}

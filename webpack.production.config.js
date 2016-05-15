@@ -22,6 +22,14 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', 'css?modules!postcss')
+      },
+      {
+        test: /\.jade$/,
+        loader: "jade-react"
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style', 'css?modules!postcss!sass')
       }
     ]
   },
