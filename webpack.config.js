@@ -21,10 +21,6 @@ module.exports = {
         loader: "babel"
       },
       {
-        test: /\.css$/,
-        loader: "style!css?modules!postcss"
-      },
-      {
         test: /\.jade$/,
         loader: "jade-react"
       },
